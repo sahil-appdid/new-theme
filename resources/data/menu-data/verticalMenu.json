@@ -19,6 +19,24 @@
       "slug": "admin.business-settings.index"
     },
     {
+      "url": "admin/employees",
+      "name": "Employees",
+      "icon": "<span class='material-symbols-outlined'>badge</span>",
+      "slug": "admin.employee.index"
+    },
+    {
+      "url": "admin/projects",
+      "name": "Projects",
+      "icon": "<span class='material-symbols-outlined'>assignment</span>",
+      "slug": "admin.project.index"
+    },
+    {
+      "url": "admin/assigns",
+      "name": "Assign",
+      "icon": "<span class='material-symbols-outlined'>flowchart</span>",
+      "slug": "admin.assigns.index"
+    },
+    {
       "navheader": "Managers Management",
       "slug": ""
     },

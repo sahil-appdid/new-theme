@@ -14,7 +14,7 @@
 
 
     @if (session('status'))
-        <div class="alert alert-danger">
+        <div class="alert alert-danger alert-dismissible fade show">
             {{ session('status') }}
         </div>
     @endif

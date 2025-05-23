@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Controllers\Admin\AssignController;
 use App\Http\Controllers\Admin\BusinessSettingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StudentController;
@@ -9,6 +10,8 @@ use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Misc\SendReportController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +51,36 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
         Route::delete('/{id}', 'destroy')->name('destroy');
         Route::post('update', 'update')->name('update');
         Route::put('status', 'status')->name('status');
+    });
+
+    Route::name('employees.')
+        ->prefix('employees')
+        ->controller(EmployeeController::class)->group(function (){
+        Route::get('/', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::get('{id}/edit', "edit")->name('edit');
+        Route::post('update', 'update')->name('update');
+        Route::delete('/{id}', 'destroy')->name('destroy');
+    });
+
+    Route::name('projects.')
+        ->prefix('projects')
+        ->controller(ProjectController::class)->group(function (){
+        Route::get('/', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::get('{id}/edit', "edit")->name('edit');
+        Route::post('update', 'update')->name('update');
+        Route::delete('/{id}', 'destroy')->name('destroy');
+    });
+
+    Route::name('assigns.')
+        ->prefix('assigns')
+        ->controller(AssignController::class)->group(function (){
+        Route::get('/', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::get('{id}/edit', "edit")->name('edit');
+        Route::post('update', 'update')->name('update');
+        Route::delete('/{id}', 'destroy')->name('destroy');
     });
 
     // Route::name('students.')
